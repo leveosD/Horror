@@ -1,0 +1,11 @@
+Model Information:
+* title:	SM_Boombox
+* source:	https://sketchfab.com/3d-models/sm-boombox-00a66884dacb498b85701acd1cc77c5e
+* author:	brian-aa (https://sketchfab.com/brian-aa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "SM_Boombox" (https://sketchfab.com/3d-models/sm-boombox-00a66884dacb498b85701acd1cc77c5e) by brian-aa (https://sketchfab.com/brian-aa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

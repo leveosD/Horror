@@ -1,0 +1,11 @@
+Model Information:
+* title:	Loft Bar Stool
+* source:	https://sketchfab.com/3d-models/loft-bar-stool-56369bd87f4249ddae5c021ad8038cb6
+* author:	ivangr (https://sketchfab.com/ivangr)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Loft Bar Stool" (https://sketchfab.com/3d-models/loft-bar-stool-56369bd87f4249ddae5c021ad8038cb6) by ivangr (https://sketchfab.com/ivangr) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

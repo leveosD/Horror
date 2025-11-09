@@ -1,0 +1,11 @@
+Model Information:
+* title:	Coffee Paper Bag
+* source:	https://sketchfab.com/3d-models/coffee-paper-bag-12e825336da1435a8decc198ea9fc06d
+* author:	clon6767 (https://sketchfab.com/clon6767)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Coffee Paper Bag" (https://sketchfab.com/3d-models/coffee-paper-bag-12e825336da1435a8decc198ea9fc06d) by clon6767 (https://sketchfab.com/clon6767) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

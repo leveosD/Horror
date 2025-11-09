@@ -1,0 +1,11 @@
+Model Information:
+* title:	Psx road
+* source:	https://sketchfab.com/3d-models/psx-road-810841609ffa47998af921844d5b7595
+* author:	BUBUK (https://sketchfab.com/12buuk1)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Psx road" (https://sketchfab.com/3d-models/psx-road-810841609ffa47998af921844d5b7595) by BUBUK (https://sketchfab.com/12buuk1) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Metal shelf rack
+* source:	https://sketchfab.com/3d-models/metal-shelf-rack-fb263bf1610848a29e3a53fc443b7f6a
+* author:	Logan S. (https://sketchfab.com/Logan_S)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Metal shelf rack" (https://sketchfab.com/3d-models/metal-shelf-rack-fb263bf1610848a29e3a53fc443b7f6a) by Logan S. (https://sketchfab.com/Logan_S) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

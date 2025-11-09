@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mop
+* source:	https://sketchfab.com/3d-models/mop-420bddb8730c4e3aa7653e5f7c5a5a7c
+* author:	ZachWilkins1997 (https://sketchfab.com/ZachWilkins1997)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mop" (https://sketchfab.com/3d-models/mop-420bddb8730c4e3aa7653e5f7c5a5a7c) by ZachWilkins1997 (https://sketchfab.com/ZachWilkins1997) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

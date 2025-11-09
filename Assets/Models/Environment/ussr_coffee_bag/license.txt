@@ -1,0 +1,11 @@
+Model Information:
+* title:	USSR Coffee Bag
+* source:	https://sketchfab.com/3d-models/ussr-coffee-bag-1ce4008472b240c483f777da1a1cfd7c
+* author:	TheUnrealFaiZ (https://sketchfab.com/TheUnrealFaiZ)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "USSR Coffee Bag" (https://sketchfab.com/3d-models/ussr-coffee-bag-1ce4008472b240c483f777da1a1cfd7c) by TheUnrealFaiZ (https://sketchfab.com/TheUnrealFaiZ) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

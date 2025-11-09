@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fence metal - 13MB
+* source:	https://sketchfab.com/3d-models/fence-metal-13mb-6f190784639d4d638d0019d5bd1bf09a
+* author:	adventurer (https://sketchfab.com/ahmagh2e)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fence metal - 13MB" (https://sketchfab.com/3d-models/fence-metal-13mb-6f190784639d4d638d0019d5bd1bf09a) by adventurer (https://sketchfab.com/ahmagh2e) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

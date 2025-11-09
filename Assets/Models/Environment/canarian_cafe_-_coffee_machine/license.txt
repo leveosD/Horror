@@ -1,0 +1,11 @@
+Model Information:
+* title:	Canarian Cafe - Coffee Machine
+* source:	https://sketchfab.com/3d-models/canarian-cafe-coffee-machine-17042d9af8c5461e98876064fd80385d
+* author:	Lanzaman (https://sketchfab.com/lanzaboy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Canarian Cafe - Coffee Machine" (https://sketchfab.com/3d-models/canarian-cafe-coffee-machine-17042d9af8c5461e98876064fd80385d) by Lanzaman (https://sketchfab.com/lanzaboy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
