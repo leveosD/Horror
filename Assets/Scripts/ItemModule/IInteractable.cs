@@ -8,7 +8,7 @@ namespace ItemModule
         {
             get;
         }
-        IInteractable Interact(IInteractable itemTransform);
-        bool Activate(IInteractable itemTransform);
+        IInteractable Interact(Transform initiator);
+        IInteractable Activate(IInteractable itemTransform);
     }
 }

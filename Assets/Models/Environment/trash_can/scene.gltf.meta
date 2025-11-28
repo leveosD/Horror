@@ -12,8 +12,8 @@ ScriptedImporter:
     generateSecondaryUVSet: 0
   importSettings:
     nodeNameMethod: 1
-    animationMethod: 2
-    generateMipMaps: 1
+    animationMethod: 0
+    generateMipMaps: 0
     texturesReadable: 0
     defaultMinFilterMode: 9729
     defaultMagFilterMode: 9729
@@ -21,20 +21,20 @@ ScriptedImporter:
   instantiationSettings:
     mask: -1
     layer: 0
-    skinUpdateWhenOffscreen: 1
+    skinUpdateWhenOffscreen: 0
     lightIntensityFactor: 1
     sceneObjectCreation: 2
   assetDependencies:
   - type: 0
-    originalUri: Assets\Models\trash_can\ene.bin
-    assetPath: Assets\Models\trash_can\ene.bin
+    originalUri: Assets\Models\Environment\trash_can\ene.bin
+    assetPath: Assets\Models\Environment\trash_can\ene.bin
   - type: 1
-    originalUri: Assets\Models\trash_can\textures\Scene_-_Root_baseColor.png
-    assetPath: Assets\Models\trash_can\textures\Scene_-_Root_baseColor.png
+    originalUri: Assets\Models\Environment\trash_can\textures\Scene_-_Root_baseColor.png
+    assetPath: Assets\Models\Environment\trash_can\textures\Scene_-_Root_baseColor.png
   - type: 1
-    originalUri: Assets\Models\trash_can\textures\Scene_-_Root_metallicRoughness.png
-    assetPath: Assets\Models\trash_can\textures\Scene_-_Root_metallicRoughness.png
+    originalUri: Assets\Models\Environment\trash_can\textures\Scene_-_Root_metallicRoughness.png
+    assetPath: Assets\Models\Environment\trash_can\textures\Scene_-_Root_metallicRoughness.png
   - type: 1
-    originalUri: Assets\Models\trash_can\textures\Scene_-_Root_normal.png
-    assetPath: Assets\Models\trash_can\textures\Scene_-_Root_normal.png
+    originalUri: Assets\Models\Environment\trash_can\textures\Scene_-_Root_normal.png
+    assetPath: Assets\Models\Environment\trash_can\textures\Scene_-_Root_normal.png
   reportItems: []

@@ -8,15 +8,15 @@ namespace ItemModule
         public Transform Transform => transform;
         public static Action InteractWithCar;
 
-        public IInteractable Interact(IInteractable item)
+        public IInteractable Interact(Transform initiator)
         {
             InteractWithCar?.Invoke();
-            return item;
+            return this;
         }
 
-        public bool Activate(IInteractable item)
+        public IInteractable Activate(IInteractable item)
         {
-            return true;
+            return this;
         }
     }
 }

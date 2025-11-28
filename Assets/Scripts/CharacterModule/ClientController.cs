@@ -18,7 +18,7 @@ public class ClientController : MonoBehaviour, INPC
     private Animator _animator;
 
     private Rigidbody _rigidbody;
-    private BoxCollider _collider;
+    private CapsuleCollider _collider;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class ClientController : MonoBehaviour, INPC
         _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<BoxCollider>();
+        _collider = GetComponent<CapsuleCollider>();
     }
 
     public async UniTask Behaviour(CancellationToken token)
@@ -35,8 +35,7 @@ public class ClientController : MonoBehaviour, INPC
         {
             _navMeshAgent.SetDestination(targets[0]);
             await UniTask.WaitUntil(() =>
-                _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance || _gotCoffee);
-
+                Vector3.Distance(transform.position, _navMeshAgent.destination) <= _navMeshAgent.stoppingDistance || _gotCoffee);
             var direction = (targets[0] - transform.position).normalized;
             transform.DORotate(new Vector3(0, Vector3.Angle(direction, transform.forward), 0), 0.55f);
             _animator.CrossFadeInFixedTime("Base Layer.Idle", 0.15f);
@@ -45,13 +44,13 @@ public class ClientController : MonoBehaviour, INPC
             _audioSource.Play();
             _navMeshAgent.SetDestination(targets[1]);
             _animator.CrossFadeInFixedTime("Base Layer.Walk", 0.15f);
-            await UniTask.WaitUntil(() => _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance);
+            await UniTask.WaitUntil(() => 
+                Vector3.Distance(transform.position, _navMeshAgent.destination) <= _navMeshAgent.stoppingDistance);
 
             _audioSource.clip = clips[1];
             _audioSource.Play();
             _animator.Play("Dead");
             _navMeshAgent.enabled = false;
-            _collider.size = new Vector3(1, 0.1f, 1);
             _rigidbody.useGravity = true;
             await UniTask.Delay(((int)_audioSource.clip.length + 1) * 1000);
         }
@@ -65,11 +64,13 @@ public class ClientController : MonoBehaviour, INPC
     {
         if (other.collider.CompareTag("Interactable"))
         {
+            Debug.Log(other.gameObject);
             other.gameObject.TryGetComponent<TakeableItem>(out var item);
             if (item is Cup cup)
             {
                 if (cup.IsFilled && cup.IsClosed)
                 {
+                    Debug.Log("Destroy a cup");
                     Destroy(other.gameObject);
                     _gotCoffee = true;
                 }

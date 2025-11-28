@@ -1,32 +1,17 @@
-﻿using DG.Tweening;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace ItemModule
 {
     public class Lid : TakeableItem
     {
-        public override IInteractable Interact(IInteractable item)
+        public async void CloseUp(Transform parent)
         {
-            if (item is Cup cup)
-            {
-                if (cup.IsFilled)
-                {
-                    transform.parent = item.Transform;
-                    itemRigidbody.isKinematic = true;
-                    gameObject.GetComponent<Collider>().enabled = false;
-                    transform.DOLocalMove(Vector3.zero, 0.5f).SetEase(Ease.OutSine);
-                    transform.DOLocalRotate(Vector3.zero, 0.5f).SetEase(Ease.OutSine);
-
-                    audioSource.clip = clips[0];
-                    audioSource.Play();
-
-                    return item;
-                }
-
-            }
-            
-            base.Interact(item);
-            return this;
+            await UniTask.WaitUntil(() => itemRigidbody.linearVelocity.magnitude <= 0.01f);
+            transform.parent = parent;
+            transform.localPosition = Vector3.zero;
+            Destroy(itemRigidbody);
+            Destroy(this);
         }
     }
 }

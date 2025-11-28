@@ -6,35 +6,40 @@ namespace ItemModule
     public class Door : MonoBehaviour, IInteractable
     {
         public Transform Transform => transform;
-        protected bool _isOpened = false;
+        protected bool isOpened = false;
         
         protected AudioSource audioSource;
         [SerializeField] protected AudioClip[] clips;
 
         protected float angle = 85f;
+
+        [SerializeField] private int doorDirection;
+        public int DoorDirection => doorDirection;
+        public int k;
         
         protected void Start()
         {
             audioSource = GetComponent<AudioSource>();
+            k = doorDirection;
         }
         
-        public IInteractable Interact(IInteractable item)
+        public virtual IInteractable Interact(Transform initiator)
         {
-            if (!_isOpened)
+            if (!isOpened)
             {
                 audioSource.clip = clips[0];
                 audioSource.Play();
                 transform.DOLocalRotate(new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 
-                    angle), 0.3f).SetEase(Ease.InQuad).onComplete += Close;
-                _isOpened = true;
+                   k * angle), 0.3f).SetEase(Ease.InQuad).onComplete += Close;
+                isOpened = true;
             }
 
-            return item;
+            return this;
         }
         
-        public bool Activate(IInteractable item)
+        public IInteractable Activate(IInteractable item)
         {
-            return true;
+            return item;
         }
 
         protected virtual void Close()

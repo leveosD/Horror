@@ -52,7 +52,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2500
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
@@ -321,7 +321,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - Color_1aedf8fc85e14a20b4110f37124904db: {r: 1, g: 1, b: 1, a: 0.4117647}
+    - Color_1aedf8fc85e14a20b4110f37124904db: {r: 1, g: 1, b: 1, a: 0.54901963}
     - Color_6f1f4256860447389cc033bad9ffdffa: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ItemModule
 {
@@ -7,14 +6,14 @@ namespace ItemModule
     {
         public Transform Transform => transform;
 
-        public IInteractable Interact(IInteractable item)
+        public IInteractable Interact(Transform initiator)
         {
             return null;
         }
 
-        public bool Activate(IInteractable item)
+        public IInteractable Activate(IInteractable item)
         {
-            return true;
+            return item;
         }
     }
 }

@@ -51,7 +51,6 @@ public class GhostfaceController : MonoBehaviour, INPC
             }
 
             _animator.CrossFadeInFixedTime("Idle", 0.2f);
-
             
             player.transform.DOLocalRotate(transform.localEulerAngles + new Vector3(0, 180, 0), 0.25f)
                 .SetEase(Ease.OutQuad);
@@ -70,6 +69,7 @@ public class GhostfaceController : MonoBehaviour, INPC
             _audioSource.clip = clips[1];
             _audioSource.volume = 0.15f;
             _audioSource.Play();
+            Debug.Log("Killer is done his job");
         }
         catch (OperationCanceledException)
         {

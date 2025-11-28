@@ -1,4 +1,3 @@
-using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -16,13 +15,11 @@ public class RadioHandler : MonoBehaviour
     private void OnEnable()
     {
         Game.OnClientsDeath += MakeNoise;
-        Game.GameOver += TurnOff;
     }
     
     private void OnDisable()
     {
         Game.OnClientsDeath -= MakeNoise;
-        Game.GameOver -= TurnOff;
     }
 
     private async void MakeNoise()

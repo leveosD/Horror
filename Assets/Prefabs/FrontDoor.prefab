@@ -42,9 +42,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5825904624201342179}
-  - component: {fileID: 752233706055012965}
   - component: {fileID: 931760650423307565}
   - component: {fileID: 6490972407702391552}
+  - component: {fileID: 984131459477753021}
   m_Layer: 6
   m_Name: Axis
   m_TagString: Interactable
@@ -68,22 +68,6 @@ Transform:
   - {fileID: 6229158165953874001}
   m_Father: {fileID: 4673093756385017119}
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
---- !u!114 &752233706055012965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636288523493831968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5a0706ca749f94296cbe83a18113ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openDirection: 1
-  clips:
-  - {fileID: 8300000, guid: 3cb222f56f4c346438ed5956d2210d20, type: 3}
-  - {fileID: 8300000, guid: 6bdf1569b4e6bea4abb8d960a226cebc, type: 3}
 --- !u!65 &931760650423307565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,6 +186,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &984131459477753021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636288523493831968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda0baf1c8b448d5ba8af85cb4d5cf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ItemModule::ItemModule.AutoDoor
+  clips:
+  - {fileID: 8300000, guid: 3cb222f56f4c346438ed5956d2210d20, type: 3}
+  - {fileID: 8300000, guid: 6bdf1569b4e6bea4abb8d960a226cebc, type: 3}
+  doorDirection: -1
+  k: 0
 --- !u!1 &7080483768414988016
 GameObject:
   m_ObjectHideFlags: 0

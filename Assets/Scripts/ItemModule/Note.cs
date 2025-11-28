@@ -4,23 +4,24 @@ namespace ItemModule
 {
     public class Note : MonoBehaviour, IInteractable
     {
+        [SerializeField] private GameObject background;
         [SerializeField] private GameObject label;
         public Transform Transform => transform;
 
         private bool _isOpened = false;
 
-        public IInteractable Interact(IInteractable item)
+        public IInteractable Interact(Transform initiator)
         {
+            background.SetActive(true);
             label.SetActive(true);
-            if (item == this)
-                return null;
             return this;
         }
 
-        public bool Activate(IInteractable item)
+        public IInteractable Activate(IInteractable item)
         {
             label.SetActive(false);
-            return true;
+            background.SetActive(false);
+            return item;
         }
     }
 }

@@ -4,13 +4,10 @@ using Cysharp.Threading.Tasks;
 using ItemModule;
 using UnityEngine;
 
-public class Game : MonoBehaviour
+public class Game : IDisposable
 {
-    [SerializeField] private Vector3 clientStartPosition;
-    [SerializeField] private Vector3 ghostfaceStartPosition;
-    
-    [SerializeField] private GameObject clientPrefab;
-    [SerializeField] private GameObject ghostfacePrefab;
+    private readonly Vector3 _clientStartPosition = new Vector3(1.35f, 0, 23);
+    private readonly Vector3 _ghosfaceStartPosition = new Vector3(3,0,-10);
 
     private GameObject _clientObject;
     private GameObject _ghostfaceObject;
@@ -23,49 +20,45 @@ public class Game : MonoBehaviour
     private CancellationToken _cancellationToken;
     
     public static event Action OnClientsDeath;
-    public static event Action<bool> GameOver;
 
-    private void OnEnable()
+    public Game(Transform parent, GameObject client, GameObject ghostface)
     {
+        _clientObject = GameObject.Instantiate(client, parent);
+        _ghostfaceObject = GameObject.Instantiate(ghostface, parent);
+
+        _clientObject.transform.position = _clientStartPosition;
+        _ghostfaceObject.transform.position = _ghosfaceStartPosition;
+
+        _clientObject.TryGetComponent(out _client);
+        _ghostfaceObject.TryGetComponent(out _ghostface);
+        
+        _cancellationTokenSource = new CancellationTokenSource();
+        _cancellationToken = _cancellationTokenSource.Token;
+        
         Car.InteractWithCar += TryToWin;
     }
-    
-    private void OnDisable()
+
+    public void Dispose()
     {
         Car.InteractWithCar -= TryToWin;
     }
 
-    private void Start()
+    public async UniTask<bool> Play()
     {
-        _cancellationTokenSource = new CancellationTokenSource();
-        _cancellationToken = _cancellationTokenSource.Token;
-        Play();
-    }
-
-    private async void Play()
-    {
-        _clientObject = Instantiate(clientPrefab, transform);
-        _clientObject.transform.position = clientStartPosition;
-        _clientObject.TryGetComponent(out _client);
-        
         await _client.Behaviour(_cancellationToken);
         OnClientsDeath?.Invoke();
-        
-        _ghostfaceObject = Instantiate(ghostfacePrefab, transform);
-        _ghostfaceObject.transform.position = ghostfaceStartPosition;
-        _ghostfaceObject.TryGetComponent(out _ghostface);
 
         UniTask killerTask = _ghostface.Behaviour(_cancellationToken);
         UniTask playerTask = PlayerTask();
         int index = await UniTask.WhenAny(killerTask, playerTask);
+        
         _cancellationTokenSource.Cancel();
-        GameOver?.Invoke(index == 1);
+        return index == 1;
     }
 
     private async UniTask PlayerTask()
     {
         await UniTask.WaitUntil(() => _isPlayerSafe, cancellationToken: _cancellationToken);
-        Debug.Log(_isPlayerSafe);
     }
 
     private void TryToWin()

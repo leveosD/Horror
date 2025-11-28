@@ -139,6 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: ItemModule::ItemModule.Door
   clips:
   - {fileID: 8300000, guid: 94c903b0eac2ca271b3077c4709d4db0, type: 3}
+  - {fileID: 8300000, guid: 94c903b0eac2ca271b3077c4709d4db0, type: 3}
+  doorDirection: 0
+  k: 0
 --- !u!82 &5304159385794586332
 AudioSource:
   m_ObjectHideFlags: 0

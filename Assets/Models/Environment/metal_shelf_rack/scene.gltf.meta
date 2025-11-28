@@ -19,22 +19,22 @@ ScriptedImporter:
     defaultMagFilterMode: 9729
     anisotropicFilterLevel: 1
   instantiationSettings:
-    mask: -1
+    mask: 2
     layer: 0
     skinUpdateWhenOffscreen: 1
     lightIntensityFactor: 1
     sceneObjectCreation: 2
   assetDependencies:
   - type: 0
-    originalUri: Assets\Models\metal_shelf_rack\scene.bin
-    assetPath: Assets\Models\metal_shelf_rack\scene.bin
-  - type: 1
-    originalUri: Assets\Models\metal_shelf_rack\textures\Material_baseColor.png
-    assetPath: Assets\Models\metal_shelf_rack\textures\Material_baseColor.png
-  - type: 1
-    originalUri: Assets\Models\metal_shelf_rack\textures\Material_metallicRoughness.png
-    assetPath: Assets\Models\metal_shelf_rack\textures\Material_metallicRoughness.png
-  - type: 1
-    originalUri: Assets\Models\metal_shelf_rack\textures\Material_normal.png
-    assetPath: Assets\Models\metal_shelf_rack\textures\Material_normal.png
+    originalUri: Assets\Models\Environment\metal_shelf_rack\scene.bin
+    assetPath: Assets\Models\Environment\metal_shelf_rack\scene.bin
+  - type: 0
+    originalUri: Assets\Models\Environment\metal_shelf_rack\textures\Material_baseColor.png
+    assetPath: Assets\Models\Environment\metal_shelf_rack\textures\Material_baseColor.png
+  - type: 0
+    originalUri: Assets\Models\Environment\metal_shelf_rack\textures\Material_metallicRoughness.png
+    assetPath: Assets\Models\Environment\metal_shelf_rack\textures\Material_metallicRoughness.png
+  - type: 0
+    originalUri: Assets\Models\Environment\metal_shelf_rack\textures\Material_normal.png
+    assetPath: Assets\Models\Environment\metal_shelf_rack\textures\Material_normal.png
   reportItems: []

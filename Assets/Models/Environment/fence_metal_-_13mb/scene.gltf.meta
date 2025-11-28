@@ -21,20 +21,20 @@ ScriptedImporter:
   instantiationSettings:
     mask: -1
     layer: 0
-    skinUpdateWhenOffscreen: 1
+    skinUpdateWhenOffscreen: 0
     lightIntensityFactor: 1
     sceneObjectCreation: 2
   assetDependencies:
   - type: 0
-    originalUri: Assets\Models\fence_metal_-_13mb\scene.bin
-    assetPath: Assets\Models\fence_metal_-_13mb\scene.bin
+    originalUri: Assets\Models\Environment\fence_metal_-_13mb\scene.bin
+    assetPath: Assets\Models\Environment\fence_metal_-_13mb\scene.bin
   - type: 1
-    originalUri: Assets\Models\fence_metal_-_13mb\textures\Scene_-_Root_baseColor.png
-    assetPath: Assets\Models\fence_metal_-_13mb\textures\Scene_-_Root_baseColor.png
+    originalUri: Assets\Models\Environment\fence_metal_-_13mb\textures\Scene_-_Root_baseColor.png
+    assetPath: Assets\Models\Environment\fence_metal_-_13mb\textures\Scene_-_Root_baseColor.png
   - type: 1
-    originalUri: Assets\Models\fence_metal_-_13mb\textures\Scene_-_Root_metallicRoughness.png
-    assetPath: Assets\Models\fence_metal_-_13mb\textures\Scene_-_Root_metallicRoughness.png
+    originalUri: Assets\Models\Environment\fence_metal_-_13mb\textures\Scene_-_Root_metallicRoughness.png
+    assetPath: Assets\Models\Environment\fence_metal_-_13mb\textures\Scene_-_Root_metallicRoughness.png
   - type: 1
-    originalUri: Assets\Models\fence_metal_-_13mb\textures\Scene_-_Root_normal.png
-    assetPath: Assets\Models\fence_metal_-_13mb\textures\Scene_-_Root_normal.png
+    originalUri: Assets\Models\Environment\fence_metal_-_13mb\textures\Scene_-_Root_normal.png
+    assetPath: Assets\Models\Environment\fence_metal_-_13mb\textures\Scene_-_Root_normal.png
   reportItems: []

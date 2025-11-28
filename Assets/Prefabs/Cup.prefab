@@ -187,10 +187,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8824551001920545862}
-  - component: {fileID: 7583198424543390107}
   - component: {fileID: 1268429565928618034}
   - component: {fileID: 1036447849593853935}
   - component: {fileID: 6704658958918460446}
+  - component: {fileID: 3490487833936933636}
   m_Layer: 7
   m_Name: Cup
   m_TagString: Interactable
@@ -208,34 +208,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8515434847480041679}
   - {fileID: 3879404374249393755}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7583198424543390107
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8597776103521992044}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 0, z: -0.7}
 --- !u!54 &1268429565928618034
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -280,10 +259,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c0074264ff4fe9347b6641d7ee52fed5, type: 3}
   - {fileID: 8300000, guid: f5846d4d23cc7364b8b2ca43dda70896, type: 3}
   - {fileID: 8300000, guid: f746b2383db78f449bfe5852215efb46, type: 3}
-  mainCamera: {fileID: 0}
-  moveSpeed: 5
-  smoothing: 0
-  player: {fileID: 0}
+  anchor: {fileID: 0}
+  speed: 1500
 --- !u!82 &6704658958918460446
 AudioSource:
   m_ObjectHideFlags: 0
@@ -305,10 +282,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 5
+  MinDistance: 0
+  MaxDistance: 12
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -381,3 +358,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &3490487833936933636
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597776103521992044}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4763983586728042654, guid: 5c2cfca2b679a564986925d253e7ee01, type: 3}
