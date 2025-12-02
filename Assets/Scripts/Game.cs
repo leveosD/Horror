@@ -45,7 +45,7 @@ public class Game : IDisposable
 
     public async UniTask<bool> Play()
     {
-        //await _client.Behaviour(_cancellationToken);
+        await _client.Behaviour(_cancellationToken);
         OnClientsDeath?.Invoke();
 
         UniTask killerTask = _ghostface.Behaviour(_cancellationToken);
