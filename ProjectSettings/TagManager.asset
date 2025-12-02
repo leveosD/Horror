@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Interactable
   - NPC
+  - Note
+  - TakeableObject
+  - Door
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -14,9 +17,9 @@ TagManager:
   - Water
   - UI
   - NavMeshIgnore
-  - TakeableItems
-  - 
-  - 
+  - InteractableObject
+  - Outline
+  - OverlayUI
   - 
   - 
   - 

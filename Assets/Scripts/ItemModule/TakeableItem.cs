@@ -35,15 +35,17 @@ namespace ItemModule
                 IsHandled = true;              
                 itemRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 
-                transform.DORotate(new Vector3(-90, 0, 0), 0.5f)
+                transform.DORotate(new Vector3(0, 0, 0), 0.5f)
                     .SetEase(Ease.InOutSine);
                 audioSource.clip = clips[0];
                 audioSource.Play();
 
                 anchor = parent;
+                
+                return this;
             }
 
-            return this;
+            return null;
         }
 
         public virtual IInteractable Activate(IInteractable item)
@@ -54,25 +56,32 @@ namespace ItemModule
                     return this;
             }
 
-            if (item is TakeableItem or null)
+            if (item is TakeableItem takeableItem)
             {
-                DOTween.Kill(gameObject);
+                if (takeableItem.IsHandled && takeableItem.Anchor != Anchor)
+                    return this;
                 
-                itemRigidbody.constraints = RigidbodyConstraints.None;
-                IsHandled = false;
-                itemRigidbody.useGravity = true;
-                anchor = null;
-
-                if (item == null)
-                {
-                    itemRigidbody.AddForce(Camera.main.transform.forward * 12f, ForceMode.Impulse);
-                    return null;
-                }
-
+                DOTween.Kill(gameObject);
+                MakeFree();
                 return item;
+            }
+
+            if (item is null)
+            {
+                MakeFree();
+                itemRigidbody.AddForce(Camera.main.transform.forward * 12f, ForceMode.Impulse);
+                return null;
             }
             
             return this;
+        }
+
+        private void MakeFree()
+        {
+            itemRigidbody.constraints = RigidbodyConstraints.None;
+            IsHandled = false;
+            itemRigidbody.useGravity = true;
+            anchor = null;
         }
 
         private void FixedUpdate()

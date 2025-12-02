@@ -7,7 +7,7 @@ using UnityEngine;
 public class Game : IDisposable
 {
     private readonly Vector3 _clientStartPosition = new Vector3(1.35f, 0, 23);
-    private readonly Vector3 _ghosfaceStartPosition = new Vector3(3,0,-10);
+    private readonly Vector3 _ghosfaceStartPosition = new Vector3(-0.5f, 0, -5);
 
     private GameObject _clientObject;
     private GameObject _ghostfaceObject;
@@ -45,7 +45,7 @@ public class Game : IDisposable
 
     public async UniTask<bool> Play()
     {
-        await _client.Behaviour(_cancellationToken);
+        //await _client.Behaviour(_cancellationToken);
         OnClientsDeath?.Invoke();
 
         UniTask killerTask = _ghostface.Behaviour(_cancellationToken);

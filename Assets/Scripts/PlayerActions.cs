@@ -11,8 +11,10 @@ public class PlayerActions
     private float _cameraAngle;
     private IInteractable _currentItem;
 
-    private Vector2 _mouseLook; // Угол поворота камеры
-    private Vector2 _smoothV; // Сглаженный вектор
+    private int _layerMask;
+
+    private Vector2 _mouseLook;
+    private Vector2 _smoothV;
 
     private GameObject _anchor;
     
@@ -31,6 +33,8 @@ public class PlayerActions
         };
         _anchor.transform.parent = _camera;
         _anchor.transform.localPosition = new Vector3(0, -0.1f, 0.5f);
+
+        _layerMask = LayerMask.GetMask("InteractableObject", "Outline");
     }
 
     public void Move(Vector2 input)
@@ -67,15 +71,14 @@ public class PlayerActions
     {
         IInteractable item = null;
         if (Physics.Raycast(_camera.transform.position,
-                _camera.forward, out var hit, 2.2f))
+                _camera.forward, out var hit, 1.75f, _layerMask))
         {
-            if (hit.transform.CompareTag("Interactable"))
-            {
-                hit.transform.gameObject.TryGetComponent(out item);
-            }
+            var go = hit.transform.gameObject;
+            go.TryGetComponent(out item);
         }
-
+        Debug.Log($"1 Current item: {_currentItem} Item: {item}");
         item?.Interact(_anchor.transform);
         _currentItem = _currentItem is not null ? _currentItem.Activate(item) : item;
+        Debug.Log($"2 Current item: {_currentItem} Item: {item}");
     }
 }

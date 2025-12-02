@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8377494760593960106}
   - component: {fileID: 1271392502684405950}
   - component: {fileID: 6773873623328572989}
+  - component: {fileID: 6272518992560913294}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -99,3 +100,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &6272518992560913294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300910226860016974}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da28aa64b5c4cff828ecf3b449eae7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.OutlineHandler
+  outlineMaterial: {fileID: 2100000, guid: 1f7b588d36c6a85428cdd3af7c228465, type: 2}
+  raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  outlineLayer: 8
+  noteBackground: {fileID: 0}

@@ -18,7 +18,6 @@ public class ClientController : MonoBehaviour, INPC
     private Animator _animator;
 
     private Rigidbody _rigidbody;
-    private CapsuleCollider _collider;
 
     private void Awake()
     {
@@ -26,7 +25,6 @@ public class ClientController : MonoBehaviour, INPC
         _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<CapsuleCollider>();
     }
 
     public async UniTask Behaviour(CancellationToken token)
@@ -52,25 +50,23 @@ public class ClientController : MonoBehaviour, INPC
             _animator.Play("Dead");
             _navMeshAgent.enabled = false;
             _rigidbody.useGravity = true;
-            await UniTask.Delay(((int)_audioSource.clip.length + 1) * 1000);
+            await UniTask.Delay(((int)_audioSource.clip.length + 1) * 500);
         }
         catch (OperationCanceledException)
         {
-            _animator.CrossFadeInFixedTime("Idle", 1f);
+            _animator.CrossFadeInFixedTime("Dead", 0.1f);
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Interactable"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("InteractableObject"))
         {
-            Debug.Log(other.gameObject);
             other.gameObject.TryGetComponent<TakeableItem>(out var item);
             if (item is Cup cup)
             {
                 if (cup.IsFilled && cup.IsClosed)
                 {
-                    Debug.Log("Destroy a cup");
                     Destroy(other.gameObject);
                     _gotCoffee = true;
                 }

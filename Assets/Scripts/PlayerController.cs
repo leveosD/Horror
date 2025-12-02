@@ -1,4 +1,3 @@
-using ItemModule;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,8 +11,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float sensitivity;
     [SerializeField] private float smoothing;
-
-    private bool _isSprint = false;
     
     void Start()
     {
@@ -23,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        EntryPoint.myInputSystem.Player.Interact.performed += StartReading;
         EntryPoint.myInputSystem.Player.Interact.performed += Interact;
     }
 
@@ -43,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!EntryPoint.myInputSystem.Player.enabled)
+        if(!EntryPoint.IsInputEnabled)
             return;
         _playerActions.Move(_moveInput);
         _playerActions.Rotate(_lookInput);
@@ -57,5 +55,10 @@ public class PlayerController : MonoBehaviour
     private void Interact(InputAction.CallbackContext context)
     {
         _playerActions.TryInteract();
+    }
+
+    private void StartReading(InputAction.CallbackContext context)
+    {
+        EntryPoint.myInputSystem.Player.Interact.performed -= StartReading;
     }
 }

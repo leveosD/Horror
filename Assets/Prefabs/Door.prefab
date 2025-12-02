@@ -78,9 +78,9 @@ GameObject:
   - component: {fileID: 4673966680936594874}
   - component: {fileID: 2559817290739693153}
   - component: {fileID: 5304159385794586332}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Plane.001
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 3635205250050093036}
   - component: {fileID: 6527403648941415564}
   - component: {fileID: 6653094239274843167}
+  - component: {fileID: 4994401175841525236}
   m_Layer: 6
   m_Name: Plane.001_Door_0
   m_TagString: Untagged
@@ -328,6 +329,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4994401175841525236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218669201059025636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8500001, y: 0.03999998, z: 2.0000002}
+  m_Center: {x: -0.43513474, y: 0.015857378, z: 0.7510385}
 --- !u!1 &3536382932513545630
 GameObject:
   m_ObjectHideFlags: 0

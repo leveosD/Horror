@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,9 @@ public class EntryPoint : MonoBehaviour
     private GameObject _player;
 
     private const float Duration = 2.5f;
+
+    private static bool _isInputEnabled = false;
+    public static bool IsInputEnabled => _isInputEnabled;
     
     void Awake()
     {
@@ -36,12 +40,12 @@ public class EntryPoint : MonoBehaviour
         _camera = Camera.main.transform;
         _camera.parent = _player.transform;
         _camera.transform.localPosition = Vector3.zero;
-        _camera.localEulerAngles = new Vector3(45, 0, 0);
+        //_camera.eulerAngles = new Vector3(45, 0, 0);
     }
 
     private void OnDestroy()
     {
-        _game.Dispose();
+        _game?.Dispose();
     }
 
     private async void StartGame(InputAction.CallbackContext context)
@@ -64,6 +68,7 @@ public class EntryPoint : MonoBehaviour
         fade.gameObject.SetActive(false);
         canvas.SetActive(true);
         myInputSystem.Player.Enable();
+        _isInputEnabled = true;
         
         _game = new Game(transform, clientPrefab, ghostfacePrefab);
         GameOver();
@@ -72,9 +77,12 @@ public class EntryPoint : MonoBehaviour
     private async void GameOver()
     {
         bool result = await _game.Play();
-        myInputSystem.Player.Disable();
         _camera.parent = null;
         Destroy(_player);
+        _camera.DOLocalRotate(new Vector3(0, _camera.localEulerAngles.y, _camera.localEulerAngles.z), 0.1f).SetEase(Ease.InQuad);
+
+        myInputSystem.Player.Disable();
+        _isInputEnabled = false;
         await UniTask.Delay(2500);
 
         fade.gameObject.SetActive(true);

@@ -51,17 +51,26 @@ public class GhostfaceController : MonoBehaviour, INPC
             }
 
             _animator.CrossFadeInFixedTime("Idle", 0.2f);
-            
-            player.transform.DOLocalRotate(transform.localEulerAngles + new Vector3(0, 180, 0), 0.25f)
-                .SetEase(Ease.OutQuad);
-            Camera.main.transform.DOLocalRotate(new Vector3(10, 0, 0), 0.25f)
-                .SetEase(Ease.OutQuad).onComplete += () =>
+
+            Vector3 direction = player.position - transform.position;
+            direction.y = 0;
+            Quaternion targetRotationA = Quaternion.LookRotation(direction);
+        
+            transform.DORotateQuaternion(targetRotationA, 0.25f).SetEase(Ease.InQuad);;
+
+            Vector3 directionB = transform.position - player.position;
+            directionB.y = 0;
+            Quaternion targetRotationB = Quaternion.LookRotation(directionB);
+        
+            player.DORotateQuaternion(targetRotationB, 0.25f).SetEase(Ease.InQuad)
+                .onComplete += () =>
             {
-                _navMeshAgent.enabled = false;
-                transform.GetComponent<Collider>().isTrigger = true;
-                var offset = new Vector3(player.position.x + player.forward.x, 0, player.position.z + player.forward.z);
-                transform.DOMove(offset, 0.01f).SetEase(Ease.InOutSine);
+                var newPosition = player.position + player.forward * 0.9f;
+                newPosition.y = 0;
+                transform.DOMove(newPosition, 0.1f)
+                    .SetEase(Ease.InQuad);
             };
+            _navMeshAgent.enabled = false;
             
             await UniTask.Delay(250, cancellationToken: token);
             
@@ -69,10 +78,12 @@ public class GhostfaceController : MonoBehaviour, INPC
             _audioSource.clip = clips[1];
             _audioSource.volume = 0.15f;
             _audioSource.Play();
+
             Debug.Log("Killer is done his job");
         }
         catch (OperationCanceledException)
         {
+            _navMeshAgent.enabled = false;
             _animator.CrossFadeInFixedTime("Idle", 1f);
         }
     }
